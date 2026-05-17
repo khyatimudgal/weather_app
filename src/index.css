@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Wave — back layer, landing only ── */
+#root:has([data-weather=""])::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'%3E%3Cpath fill='white' fill-opacity='0.25' d='M0,100 C240,30 480,170 720,100 C960,30 1200,170 1440,100 L1440,200 L0,200 Z'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 1440px 200px;
+  animation: wave-scroll-back 7s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes wave-scroll-back {
+  from { background-position-x: 1440px; }
+  to   { background-position-x: 0; }
+}
