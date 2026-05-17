@@ -226,6 +226,19 @@ div:has(> input[type="text"]) button:active {
   font-size: 1rem;
 }
 
+/* ── Error message banner ── */
+.error-message {
+  background: rgba(220, 53, 69, 0.18);
+  border: 1.5px solid rgba(220, 53, 69, 0.55);
+  color: #fff !important;
+  border-radius: 14px;
+  padding: 12px 20px;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
 /* ── Hide floating city name when weather is loaded ── */
 #root > div:not([data-weather=""]) > p {
   display: none;

@@ -30,7 +30,7 @@ function App() {
       </button>
 
       {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
+      {error && <p className="error-message">{error}</p>}
       {weather && <p>{weather.location.name}</p>}
       {weather && <CurrentWeather weather={weather} unit = {unit}/>}
       {weather && <WeatherDetails weather={weather} unit= {unit}/>}
